@@ -65,9 +65,75 @@ ul {
 }
 
 footer {
-  background: #111;
+  background:#0c0129;
   color: white;
   text-align: center;
   padding: 20px;
   margin-top: 40px;
+}
+
+/* ----------------------------
+   SCROLL ANIMATIONS ADDED
+----------------------------- */
+
+/* Section fade-in */
+.scroll-animate {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.9s ease-out;
+}
+
+.scroll-animate.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Card stagger animation */
+.card-animate {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.6s ease-out;
+}
+
+.card-animate.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Optional: delay on cards via data-delay */
+[data-delay="100"] { transition-delay: 100ms; }
+[data-delay="200"] { transition-delay: 200ms; }
+[data-delay="300"] { transition-delay: 300ms; }
+[data-delay="400"] { transition-delay: 400ms; }
+
+
+.animated-header {
+  background: #0c0129;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+  animation: slideDown 1s ease-out, colorChange 3s infinite alternate;
+}
+
+@keyframes slideDown {
+  0% { transform: translateY(-100px); opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes colorChange {
+  0% { background-color: #0c0129; }
+  100% { background-color: #1a0535; }
+}
+
+.animated-footer {
+  background: #0c0129;
+  color: #fff;
+  text-align: center;
+  padding: 15px;
+  animation: fadeInBounce 2s ease-out infinite alternate;
+}
+
+@keyframes fadeInBounce {
+  0% { opacity: 0; transform: translateY(50px); }
+  100% { opacity: 1; transform: translateY(0); }
 }
